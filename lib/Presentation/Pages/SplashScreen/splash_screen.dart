@@ -28,7 +28,10 @@ class _SplashScreenState extends State<SplashScreen> {
           duration: Duration(seconds: 2),
           curve: Curves.easeInOut,
           alignment: Alignment.center,
-          child: Image.asset("assets/images/preview.png"),
+          child: Hero(
+            tag: 'logo',
+            child: Image.asset("assets/images/preview.png"),
+          ),
         ),
       ),
     );

@@ -1,6 +1,7 @@
 import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:wallx/Core/Utilities/AppConstrains.dart';
 import 'package:wallx/Presentation/Controllers/image_controller_controller.dart';
 import 'package:wallx/Presentation/Pages/ImageView/image_view_page.dart';
 
@@ -33,36 +34,64 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          Expanded(
-            child: Obx(
-              () => GridView.builder(
-                padding: EdgeInsets.symmetric(horizontal: 20),
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  crossAxisSpacing: 20,
-                ),
-                controller: _scrollController,
-                itemBuilder: (context, index) {
-                  return InkWell(
-                    onTap: () {
-                      Get.to(ImageViewPage(image: controller.images[index]));
-                    },
-                    child: Hero(
-                      tag: controller.images[index].id,
-                      child: ExtendedImage.network(
-                        controller.images[index].downloadUrl,
-                        cache: true,
-                      ),
+      body: SafeArea(
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 20.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Hero(
+                    tag:'logo',
+                    child: Image.asset(
+                      "assets/images/preview.png",
+                      height: 40,
+                      width: 40,
                     ),
-                  );
-                },
-                itemCount: controller.images.length,
+                  ),
+                  AppConstrains.width10,
+                  Text(
+                    "WallX",
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+                  ),
+                ],
               ),
             ),
-          ),
-        ],
+            Expanded(
+              child: Obx(
+                () => GridView.builder(
+                  padding: EdgeInsets.symmetric(horizontal: 20),
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    crossAxisSpacing: 10,
+                    mainAxisSpacing: 10
+                  ),
+                  controller: _scrollController,
+                  itemBuilder: (context, index) {
+                    return InkWell(
+                      onTap: () {
+                        Get.to(ImageViewPage(image: controller.images[index]));
+                      },
+                      child: Hero(
+                        tag: controller.images[index].id,
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(20),
+                          child: ExtendedImage.network(
+                            controller.images[index].downloadUrl,
+                            cache: true,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+                    );
+                  },
+                  itemCount: controller.images.length,
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

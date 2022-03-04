@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:hive/hive.dart';
 
 import 'Core/Language/Language.dart';
 import 'Core/Utilities/exportutilities.dart';
@@ -8,6 +9,7 @@ import 'Presentation/Pages/exportpages.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
   runApp(MyApp());
 }
 

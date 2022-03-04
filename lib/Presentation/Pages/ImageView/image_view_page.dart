@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_wallpaper_manager/flutter_wallpaper_manager.dart';
 import 'package:get/get.dart';
 import 'package:wallx/Core/Utilities/api_manager.dart';
+import 'package:wallx/Core/Utilities/exportutilities.dart';
 import 'package:wallx/Data/RepositoryModels/image_model.dart';
 
 class ImageViewPage extends StatefulWidget {
