@@ -32,13 +32,16 @@ class ApiManager {
     }
   }
 
-  static Future<String?> getImageFile(String url) async {
+  static Future<String?> getImageFile(String url, String id) async {
     try {
       Directory documentDirectory = await getApplicationDocumentsDirectory();
+      if (File(documentDirectory.path + '/$id.jpg').existsSync()) {
+        return documentDirectory.path + '/$id.jpg';
+      }
       Response response =
-          await _dio.download(url, documentDirectory.path + './wallpaper.jpg');
+          await _dio.download(url, documentDirectory.path + '/$id.jpg');
       if (response.statusCode == 200) {
-        return documentDirectory.path + './wallpaper.jpg';
+        return documentDirectory.path + '/$id.jpg';
       } else {
         return null;
       }

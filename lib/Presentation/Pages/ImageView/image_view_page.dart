@@ -4,7 +4,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_wallpaper_manager/flutter_wallpaper_manager.dart';
 import 'package:get/get.dart';
 import 'package:wallx/Core/Utilities/api_manager.dart';
-import 'package:wallx/Core/Utilities/exportutilities.dart';
 import 'package:wallx/Data/RepositoryModels/image_model.dart';
 
 class ImageViewPage extends StatefulWidget {
@@ -103,7 +102,8 @@ class _ImageViewPageState extends State<ImageViewPage> {
   }
 
   void getImage() async {
-    filepath = await ApiManager.getImageFile(widget.image.downloadUrl);
+    filepath = await ApiManager.getImageFile(
+        widget.image.downloadUrl, widget.image.id);
     setState(() {});
   }
 }
