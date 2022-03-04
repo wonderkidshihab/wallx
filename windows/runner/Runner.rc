@@ -92,10 +92,10 @@ BEGIN
             VALUE "CompanyName", "com.wonderkid" "\0"
             VALUE "FileDescription", "A new Flutter project." "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "initial_app" "\0"
+            VALUE "InternalName", "wallx" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2021 com.wonderkid. All rights reserved." "\0"
-            VALUE "OriginalFilename", "initial_app.exe" "\0"
-            VALUE "ProductName", "initial_app" "\0"
+            VALUE "OriginalFilename", "wallx.exe" "\0"
+            VALUE "ProductName", "wallx" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

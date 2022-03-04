@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.15)
-project(initial_app LANGUAGES CXX)
+project(wallx LANGUAGES CXX)
 
-set(BINARY_NAME "initial_app")
+set(BINARY_NAME "wallx")
 
 cmake_policy(SET CMP0063 NEW)
 

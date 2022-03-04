@@ -6,7 +6,7 @@ import 'Core/Language/Language.dart';
 import 'Core/Utilities/exportutilities.dart';
 import 'Presentation/Pages/exportpages.dart';
 
-void main() async{
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(MyApp());
 }
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: "INITIAL APP",
+      title: "WallX",
       translations: Language(),
       locale: Locale('en', 'US'),
       fallbackLocale: Locale('en', 'US'),

@@ -1,4 +1,4 @@
-package com.wonderkid.initial_app
+package com.wonderkid.wallx
 
 import io.flutter.embedding.android.FlutterActivity
 
